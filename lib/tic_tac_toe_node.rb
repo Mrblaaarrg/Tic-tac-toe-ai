@@ -33,8 +33,7 @@ class TicTacToeNode
 
   def losing_node?(evaluator)
     if @board.over?
-      return true if @board.winner == NEXT_MARK[evaluator]
-      return false if @board.winner.nil? || @board.winner == evaluator
+      return @board.won? && @board.winner != evaluator
     end
 
     if evaluator == @next_mover_mark
@@ -46,8 +45,7 @@ class TicTacToeNode
 
   def winning_node?(evaluator)
     if @board.over?
-      return true if @board.winner == evaluator
-      return false if @board.winner.nil? || @board.winner == NEXT_MARK[evaluator]
+      return @board.won? && @board.winner == evaluator
     end
 
     if evaluator == @next_mover_mark
