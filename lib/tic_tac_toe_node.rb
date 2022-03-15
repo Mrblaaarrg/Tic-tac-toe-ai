@@ -1,5 +1,4 @@
 require_relative 'tic_tac_toe'
-require "byebug"
 
 class TicTacToeNode
   NEXT_MARK = { x: :o, o: :x}
@@ -11,13 +10,7 @@ class TicTacToeNode
     @prev_move_pos = prev_move_pos
   end
 
-  attr_reader :board, :next_mover_mark, :prev_move_pos#, :children
-
-  def losing_node?(evaluator)
-  end
-
-  def winning_node?(evaluator)
-  end
+  attr_reader :board, :next_mover_mark, :prev_move_pos
 
   # This method generates an array of all moves that can be made after
   # the current move.
